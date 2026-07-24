@@ -1,8 +1,23 @@
 # Pest & wildlife photos
 
-Drop real photos in this folder using the exact filenames below and they will
-appear automatically on the site — no code changes needed. Until a file exists,
-the card shows an on-brand placeholder icon instead of a broken image.
+Each pest card loads its image in this priority order (first one that works wins):
+
+1. **Your own photo** in this folder, using the exact filename below.
+2. **A public Wikimedia Commons photo** (wired in as a fallback via `data-fallback`),
+   which loads in a normal browser on the deployed site.
+3. **An on-brand placeholder icon** if neither is available — so a card never
+   shows a broken image.
+
+Dropping a file here (option 1) always overrides the Wikimedia photo. That's the
+recommended path: use your own photos, or properly licensed stock, so you control
+quality and licensing.
+
+> **Note on the Wikimedia fallbacks:** they were added without being able to
+> verify each image from this build environment (the network blocks image hosts),
+> so review them on the live site — some filenames may not resolve (those cards
+> just show the placeholder), and any that do load are subject to that image's
+> Wikimedia Commons license, which may require attribution. Replacing them with
+> your own photos removes all of that.
 
 | Filename            | Shows on card      |
 | ------------------- | ------------------ |
