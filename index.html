@@ -290,6 +290,50 @@
   .pest p { color: var(--muted); font-size: 0.9rem; margin: 0; line-height: 1.5; }
   .pest .signs { font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; font-size: .7rem; color: var(--red-text); }
 
+  /* ---- promo bar ---- */
+  .promo { background: var(--red); color: #fff; }
+  .promo .wrap { display: flex; align-items: center; justify-content: center; gap: 8px 14px; padding: 9px 22px; flex-wrap: wrap; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: var(--s--1); text-align: center; }
+  .promo b { background: #fff; color: var(--red); padding: 2px 8px; border-radius: 5px; }
+  .promo a { text-decoration: underline; text-underline-offset: 2px; }
+
+  /* ---- hero quote card (Terminix-style lead capture) ---- */
+  .herocard { background: linear-gradient(180deg, var(--steel-2), var(--steel)); border: 1px solid var(--hair); border-radius: 16px; padding: 26px 24px; box-shadow: 0 50px 90px -50px #000, 0 0 0 1px rgba(227,6,19,.15); }
+  .herocard h2 { font-size: var(--s-2); }
+  .herocard .sub { color: var(--muted); font-size: 0.92rem; margin: 6px 0 18px; }
+  .herocard .zip { display: flex; gap: 10px; }
+  .herocard input, .herocard select { background: #0e1114; border: 1px solid var(--line); border-radius: 9px; color: #fff; font-family: var(--sans); font-size: 1rem; padding: 14px 14px; width: 100%; }
+  .herocard .zip input { flex: 1; }
+  .herocard select { margin-top: 10px; }
+  .herocard input:focus, .herocard select:focus { outline: none; border-color: var(--red); }
+  .herocard .btn { width: 100%; margin-top: 14px; }
+  .herocard .g { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; color: var(--muted); font-family: var(--display); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; font-size: .68rem; }
+  .herocard .g svg { width: 16px; height: 16px; color: var(--good); }
+
+  /* ---- plans / pricing ---- */
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; align-items: stretch; }
+  .plan { background: linear-gradient(180deg, var(--steel-2), var(--steel)); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 26px 30px; display: flex; flex-direction: column; }
+  .plan.feat { border-color: var(--red); box-shadow: 0 0 0 1px var(--red), 0 40px 80px -50px rgba(227,6,19,.5); }
+  .plan .pill { align-self: flex-start; background: var(--red); color: #fff; font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .62rem; padding: 4px 9px; border-radius: 6px; margin-bottom: 14px; }
+  .plan h3 { font-size: var(--s-2); }
+  .plan .price { font-family: var(--display); font-weight: 800; font-size: var(--s-2); margin: 12px 0 2px; }
+  .plan .price small { font-size: .8rem; color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }
+  .plan > p { color: var(--muted); font-size: .92rem; margin: 8px 0 0; }
+  .plan ul { list-style: none; padding: 0; margin: 18px 0 24px; display: flex; flex-direction: column; gap: 10px; }
+  .plan li { font-size: .9rem; color: #c7ced5; padding-left: 24px; position: relative; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-family: var(--display); }
+  .plan .btn { justify-content: center; margin-top: auto; }
+
+  /* ---- guarantee band ---- */
+  .guarantee { background: linear-gradient(180deg, #141619, #0e0f12); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .guarantee .wrap { display: grid; grid-template-columns: auto 1fr auto; gap: clamp(20px, 4vw, 46px); align-items: center; padding: clamp(36px, 5vw, 56px) 22px; }
+  .seal { width: 118px; height: 118px; flex: none; display: grid; place-items: center; border-radius: 50%; border: 3px solid var(--red); text-align: center; background: radial-gradient(circle, #1c2026, #101216); box-shadow: 0 0 0 6px rgba(227,6,19,.12), inset 0 0 30px rgba(0,0,0,.6); }
+  .seal span { font-family: var(--display); font-weight: 800; text-transform: uppercase; line-height: 1; display: block; }
+  .seal .big { font-size: 1.45rem; color: var(--red-text); }
+  .seal .sm { font-size: .58rem; letter-spacing: .12em; margin-top: 5px; color: var(--muted); }
+  .guarantee h2 { font-size: var(--s-2); }
+  .guarantee p { color: var(--muted); margin: 10px 0 0; max-width: 54ch; }
+  .guarantee .btn { white-space: nowrap; }
+
   /* ---- responsive ---- */
   @media (max-width: 940px) {
     .hero-inner { grid-template-columns: 1fr; }
@@ -297,6 +341,9 @@
     .hero-badge img { width: min(72%, 340px); }
     .services, .area, .cta-grid { grid-template-columns: 1fr; }
     .pestgrid { grid-template-columns: 1fr 1fr; }
+    .plans { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+    .guarantee .wrap { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .guarantee p { margin-inline: auto; }
     .trust, .steps { grid-template-columns: 1fr 1fr; }
     .reviews { grid-template-columns: 1fr; }
     .foot { grid-template-columns: 1fr 1fr; }
@@ -316,6 +363,15 @@
 <body>
 <div class="page" id="top">
 
+  <!-- PROMO BAR -->
+  <div class="promo">
+    <div class="wrap">
+      <span><b>$50 OFF</b> your first service — mention code <b>RAPID50</b></span>
+      <span>·</span>
+      <a href="tel:+15551234567">Call (555) 123-4567 →</a>
+    </div>
+  </div>
+
   <!-- UTILITY BAR -->
   <div class="util">
     <div class="wrap">
@@ -332,6 +388,7 @@
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
+        <a href="#plans">Plans</a>
         <a href="#pests">Pests</a>
         <a href="#process">Our Process</a>
         <a href="#why">Why Us</a>
@@ -364,9 +421,23 @@
           <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Written Guarantee</span>
         </div>
       </div>
-      <div class="hero-badge">
-        <span class="ring" aria-hidden="true"></span>
-        <img src="assets/logo.png" alt="Rapid Pest &amp; Wildlife Solutions shield badge">
+      <div class="herocard">
+        <h2>Get your free quote</h2>
+        <p class="sub">Tell us where you are and what you're dealing with — we'll get you a fast, no-obligation price.</p>
+        <form id="zipForm" novalidate>
+          <div class="zip">
+            <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="ZIP code" aria-label="ZIP code" required>
+          </div>
+          <label class="sr-only" for="zip-issue">What do you need?</label>
+          <select id="zip-issue" name="service">
+            <option>Wildlife removal</option>
+            <option>Rodent control</option>
+            <option>Insect / pest control</option>
+            <option>Not sure — inspect it</option>
+          </select>
+          <button class="btn btn-red btn-lg" type="submit">Get Started</button>
+        </form>
+        <div class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>Backed by the Rapid Guarantee</div>
       </div>
     </div>
   </section>
@@ -436,6 +507,56 @@
           <p>Ongoing inspections and monitoring on a schedule that fits your property, catching new activity early — before it turns into another emergency.</p>
           <ul><li>Scheduled visits</li><li>Bait station checks</li><li>Priority booking</li></ul>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS / PRICING -->
+  <section class="block" id="plans">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Choose Your Protection</p>
+        <h2>Simple plans, <span class="steel-text">clear pricing</span>.</h2>
+        <p>Pick the coverage that fits your home. Every plan starts with a free inspection and an up-front quote — no surprises.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>One-Time Service</h3>
+          <div class="price">From $149<small> / visit</small></div>
+          <p>A single targeted treatment for a specific pest problem, start to finish.</p>
+          <ul>
+            <li>Full inspection &amp; ID</li>
+            <li>Targeted treatment</li>
+            <li>Up-front pricing</li>
+          </ul>
+          <a class="btn btn-steel" href="#quote">Get Pricing</a>
+        </div>
+
+        <div class="plan feat">
+          <span class="pill">Most popular</span>
+          <h3>Home Protection</h3>
+          <div class="price">From $39<small> / month</small></div>
+          <p>Year-round coverage against common pests, with recurring visits and priority service.</p>
+          <ul>
+            <li>Quarterly treatments</li>
+            <li>Free re-visits between services</li>
+            <li>Interior &amp; exterior</li>
+            <li>Rapid Guarantee included</li>
+          </ul>
+          <a class="btn btn-red" href="#quote">Get Pricing</a>
+        </div>
+
+        <div class="plan">
+          <h3>Wildlife &amp; Exclusion</h3>
+          <div class="price">Custom<small> / quoted</small></div>
+          <p>Trapping, removal, full exclusion and seal-up — priced to the job after inspection.</p>
+          <ul>
+            <li>Humane trapping &amp; removal</li>
+            <li>Entry-point sealing</li>
+            <li>Damage repair &amp; cleanup</li>
+          </ul>
+          <a class="btn btn-steel" href="#quote">Get Pricing</a>
+        </div>
       </div>
     </div>
   </section>
@@ -663,6 +784,21 @@
     </div>
   </section>
 
+  <!-- GUARANTEE BAND -->
+  <div class="guarantee" id="guarantee">
+    <div class="wrap">
+      <div class="seal" aria-hidden="true">
+        <span><span class="big">100%</span><span class="sm">Guaranteed</span></span>
+      </div>
+      <div>
+        <p class="eyebrow">The Rapid Guarantee</p>
+        <h2 style="margin-top:12px;">If they come back, so do we.</h2>
+        <p>We stand behind every job in writing. If covered pests return between scheduled visits, we re-treat at no charge — and our exclusion work is guaranteed. Simple as that.</p>
+      </div>
+      <a class="btn btn-red btn-lg" href="#quote">Get Protected</a>
+    </div>
+  </div>
+
   <!-- REVIEWS -->
   <section class="block why" id="reviews">
     <div class="wrap">
@@ -811,6 +947,24 @@
     window.location.href = 'mailto:service@rapidpestandwildlife.com'
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(body);
+  });
+})();
+
+(function () {
+  var z = document.getElementById('zipForm');
+  if (!z) return;
+  z.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var zip = (document.getElementById('zip') || {}).value || '';
+    var svc = (document.getElementById('zip-issue') || {}).value || '';
+    var addr = document.getElementById('q-addr');
+    if (addr && zip) addr.value = 'ZIP ' + zip;
+    var msg = document.getElementById('q-msg');
+    if (msg && svc) msg.value = 'Service needed: ' + svc + '\n';
+    var target = document.getElementById('quote');
+    if (target && target.scrollIntoView) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    var nm = document.getElementById('q-name');
+    if (nm) setTimeout(function () { nm.focus(); }, 450);
   });
 })();
 </script>
