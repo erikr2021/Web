@@ -1,17 +1,20 @@
-# Web
+# Rapid Pest & Wildlife Solutions — website
+
+Landing page for Rapid Pest & Wildlife Solutions. The site is a single self-contained
+`index.html` (inline CSS/JS) with assets under `assets/`. Open `index.html` in a browser
+to view it locally.
 
 ## Claude Code plugins
 
-This repository has the [ECC](https://github.com/affaan-m/ECC) plugin enabled at the
-project level via `.claude/settings.json`. ECC is a plugin marketplace of agents,
-skills, hooks, and rules for Claude Code.
+This repository enables several plugin marketplaces at the project level via
+`.claude/settings.json`. When you open the repo in Claude Code and trust the folder,
+Claude Code prompts you to install them; run `/reload-plugins` to activate.
 
-When you open this repo in Claude Code and trust the folder, Claude Code will prompt you
-to install the `ecc` marketplace and the `ecc@ecc` plugin. After installing, run
-`/reload-plugins` to activate it. ECC's skills are namespaced under `ecc:`
-(e.g. `/ecc:<skill-name>`).
+- **`anthropic-agent-skills`** ([anthropics/skills](https://github.com/anthropics/skills)) —
+  Anthropic's official Agent Skills. Enabled plugins: `document-skills` (PDF, DOCX, PPTX,
+  XLSX handling) and `claude-api` (Claude API reference).
+- **`ecc`** ([affaan-m/ECC](https://github.com/affaan-m/ECC)) — a large third-party
+  marketplace of agents, skills, hooks and rules. Skills are namespaced (e.g. `/ecc:<name>`).
 
-Configuration lives in `.claude/settings.json`:
-
-- `extraKnownMarketplaces` registers the `ecc` marketplace from GitHub (`affaan-m/ECC`).
-- `enabledPlugins` enables `ecc@ecc` for everyone working in this repository.
+Plugins run with your privileges and can execute code, so only keep marketplaces you
+trust. Remove any entry from `extraKnownMarketplaces` / `enabledPlugins` to disable it.
