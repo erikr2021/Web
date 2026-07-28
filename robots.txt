@@ -1,0 +1,7 @@
+# robots.txt for Rapid Pest & Wildlife Solutions
+# Allow all well-behaved crawlers to index the entire site.
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://www.rapidpestandwildlife.com/sitemap.xml
