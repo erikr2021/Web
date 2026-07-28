@@ -8,7 +8,7 @@ frameworks, no build step. Save the files to any web host and it runs.
 ## Structure
 
 ```
-/                 (site root)
+rapid-pest-website/   (site root — upload the contents to your web host)
   index.html      Home
   about.html      About / mission / values / service area
   services.html   8 detailed service sections
